@@ -1,0 +1,97 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>HelloWorld!</h1>
+        <input type="button" value="Showme" onclick='sayhi()'>
+        <p id="ex3"></p>
+        <input type="button" value="button" onclick='sayhello()'>
+        <p id="ex1"></p>
+        <p id="ex2">hello wolrd</p>
+        <input type="button" value="3*4" onclick="mul(3,4)">
+        <br>
+        <input type="button" value="UsingEvent" id="btn1">
+        <br>
+        <input type="text" onmousedown="alert('Now time is 12:05pm')">
+        <br>
+        <input type="button" value="BTNNTB" id="btn">
+        <br>
+        <br>
+        <div class="container">
+            <input type="button" value="A" id="Abtn">
+            <input type="button" value="B" id="Bbtn">
+            <h1 id="test"></h1>
+        </div>
+        <script>
+            //이게주석이다.
+
+            /*
+            전
+            체
+            주
+            석
+            이
+            다*/
+        var test=document.getElementById('test');
+
+        function btn_EL(event){
+            switch(event.target.id){
+                case 'Abtn':
+                    test.innerHTML="AAAAAA";
+                    break;
+                case 'Bbtn':
+                    test.innerHTML="BBBBBB";
+            }
+        }
+
+        Abtn.addEventListener('click',btn_EL);
+        Bbtn.addEventListener('click',btn_EL);
+        
+
+            document.getElementById("ex1").innerHTML="HelloHel";
+            document.getElementById("ex2").style.color="blue";
+            
+
+        function sayhello(){
+                return alert('hellohellohellohellohellohellohellohello');
+            }
+
+        function mul(a,b){
+            return alert(a*b);
+        }
+
+        var ex3=document.getElementById("ex3");
+
+        function sayhi(){
+            ex3.innerHTML="hihihi";
+        }
+
+        var btn1=document.getElementById("btn1");
+
+        btn1.onclick = function(event){
+            alert(event.target.value);
+        }
+
+        var btn=document.getElementById("btn");
+
+        btn.addEventListener('click', function(event){
+            alert("BTNNBTNBTN");
+        })
+
+        btn.addEventListener('click', function(event){
+            alert("AAAAAAAAAAAAAAAAAAAAA");
+        })
+
+        
+        </script>
+    </body>
+</html>
+
+<script>
+/*과제 = 조건 보고 하기
+1. 깔끔한 코딩 필수
+2. 주석 쭉 달아두기
+3. 인터넷에 정규씨 표현식 찾아보지
+</script>

@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<body>
+
+{% if user.is_active %}
 <br>
+
 {% for blog in posts %}
 
     <h1>제목 : {{blog.title}}</h1>
@@ -27,5 +29,32 @@
 <a href="?page={{posts.next_page_number}}">Last</a>
 {%endif%}
 </div>
+
+{% else %}
+<div class="container">
+
+        <h1>Login</h1>
+        
+        <form method = "POST" action="{%url 'login'%}">
+            {% csrf_token %}
+            Username:
+            <br>
+            <input name="username" type="text" value="">
+            <br>
+            Password:
+            <br>
+            <input name="password" type="password" value="">
+            <br>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Login">
+        
+        </form>
+        </div>
+    <body>
+
+{% endif %}
+
 {% endblock %}
+
+
 </body>

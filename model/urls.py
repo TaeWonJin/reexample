@@ -28,6 +28,6 @@ urlpatterns = [
     path('portfolio/',portfolio.views.portfolio,name="portfolio"),
     path('account/signup/', account.views.signup, name='signup'),
     path('account/login/' , account.views.login, name='login'),
-    path('account/logout/', account.views.logout, name='logout'),
+    path('account/logout/', account.views.logout_request, name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

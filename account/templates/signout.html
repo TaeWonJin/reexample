@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div>
+    <form method ='POST' action='{% url "signout" %}'>
+        <p>회원을 탈퇴 하시려면, 비밀번호를 다시 한번 입력 해 주세요</p>
+        <br>
+        <p>Password:</p>
+        <br>
+        <input name="password" type="password" value="">
+        <br>
+
+    </form>
+</div>
+{% endblock %}

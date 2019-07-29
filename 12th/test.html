@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function keyevent() {
+        alert(`키값: ${event.keyCode} 이벤트: ${event.type}`);
+      }
+    </script>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td>onKeyDown</td>
+        <td><input type="text" onkeydown="javascript:keyevent(this);" /></td>
+      </tr>
+      <tr>
+        <td>onKeyUp</td>
+        <td><input type="text" onkeyup="javascript:keyevent(this);" /></td>
+      </tr>
+      <tr>
+        <td>onKeyPress</td>
+        <td><input type="text" onkeyPress="javascript:keyevent(this);" /></td>
+      </tr>
+    </table>
+  </body>
+</html>

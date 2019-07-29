@@ -30,3 +30,10 @@ def create(request):
     return redirect('/blog/'+str(blog.id))
     #쿼리셋과 메소드의 형식
     #모델.쿼리셋(objects).메소드
+
+def delete(request, blog_id):
+    blog =Blog.object.get(id=blog_id)
+    blog.delete()
+    return redirect('home')
+
+

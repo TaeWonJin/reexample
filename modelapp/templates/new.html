@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block contents %}
+
+{% if user.is_active %}
 <body>
-        <div class="containver">
+        <div class="containner">
             <form action="{%url 'create'%}">
                 <h4>제목:</h4>
                 <input type="text" name="title">
@@ -16,4 +18,29 @@
             </form>
         </div>
 </body>
+
+{% else %}
+<div class="container">
+
+        <h1>Login</h1>
+        
+        <form method = "POST" action="{%url 'login'%}">
+            {% csrf_token %}
+            Username:
+            <br>
+            <input name="username" type="text" value="">
+            <br>
+            Password:
+            <br>
+            <input name="password" type="password" value="">
+            <br>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Login">
+        
+        </form>
+        </div>
+    <body>
+
+{% endif %}
+
 {% endblock %}

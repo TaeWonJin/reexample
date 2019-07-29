@@ -23,7 +23,14 @@ def login(request):
     else:
         return redirect('login')
 
-def logout(request):
-    if request.method == 'POST':
-        auth.logout(request)
+def logout_request(request):
+    user = get.object.POST(username = username)
+    logout(request,user)
     return redirect('login')
+
+def signout(request):
+    user = User.objects.get(password = request.POST['password'])
+    user.delete()
+
+    return redirect('home')
+    
